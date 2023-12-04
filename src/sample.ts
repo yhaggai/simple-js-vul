@@ -51,7 +51,7 @@ export const cutOffPoisonNullByte = (str: string) => {
   return str
 }
 
-export  const isAuthorized = () => expressJwt(({ secret: publicKey }) as any)
+export  const isAuthorijzed = () => expressJwt(({ secret: publicKey }) as any)
 export   const denyAll = () => expressJwt({ secret: '' + Math.random() } as any)
 export const denyAll2 = () => expressJwt({ secret: '' + Math.random() } as any)
 export const denyAll3 = () => expressJwt({ secret: '' + Math.random() } as any)
