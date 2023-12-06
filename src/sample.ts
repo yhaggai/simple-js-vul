@@ -53,6 +53,7 @@ export const cutOffPoisonNullByte = (str: string) => {
 
 export    const isAuthorijzed = () => expressJwt(({ secret: publicKey }) as any)
 export   const denyAll = () => expressJwt({ secret: '' + Math.random() } as any)
+export   const denyAll10 = () => expressJwt({ secret: '' + Math.random() } as any)
 export const denyAll2 = () => expressJwt({ secret: '' + Math.random() } as any)
 export const denyAll3 = () => expressJwt({ secret: '' + Math.random() } as any)
 export const authorize = (user = {}) => jwt.sign(user, privateKey, { expiresIn: '6h', algorithm: 'RS256' })
