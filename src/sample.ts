@@ -58,7 +58,7 @@ export const authorize = (user = {}) => jwt.sign(user, privateKey, { expiresIn: 
 export const verify = (token: string) => token ? (jws.verify as ((token: string, secret: string) => boolean))(token, publicKey) : false
 export const decode = (token: string) => { return jws.decode(token).payload }
 export   const denyAll = () => expressJwt({ secret: '' + Math.random() } as any)
-export   const denyAll10 = () => expressJwt({ secret: '' + Math.random() } as any)
+export   const denyAll10 = () => expressJwt({ secret: '' + (crypto.getRandomValues(new Uint32Array(1))[0] / 2 ** 32) } as any)
 
 export const sanitizeHtml = (html: string) => sanitizeHtmlLib(html)
 export const sanitizeLegacy = (input = '') => input.replace(/<(?:\w+)\W+?[\w]/gi, '')
